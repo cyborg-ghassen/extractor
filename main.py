@@ -3,8 +3,9 @@ with open("file.txt", "r") as f:
     addresses = []
     private_keys = []
     for i in lines:
-        addresses.append(i.split('\t')[0] + '\n')
-        private_keys.append(i.split('\t')[1])
+        splitted = i.split('\t')
+        addresses.append(splitted[0] + '\n')
+        private_keys.append(splitted[1] + '\n')
 
 with open("addresses.txt", "w") as f:
     f.writelines(addresses)
